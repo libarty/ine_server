@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'info';
+  src:  url('fonts/info.eot?xrr2fm');
+  src:  url('fonts/info.eot?xrr2fm#iefix') format('embedded-opentype'),
+    url('fonts/info.ttf?xrr2fm') format('truetype'),
+    url('fonts/info.woff?xrr2fm') format('woff'),
+    url('fonts/info.svg?xrr2fm#info') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="info-"], [class*=" info-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'info' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.info-black_horse:before {
+  content: "\e900";
+}
+.info-bookmarks-off:before {
+  content: "\e901";
+}
+.info-bookmarks-on:before {
+  content: "\e902";
+}
+.info-critic_rating_1:before {
+  content: "\e903";
+}
+.info-critic_rating_2:before {
+  content: "\e904";
+}
+.info-critic_rating_3:before {
+  content: "\e905";
+}
+.info-critic_rating_4:before {
+  content: "\e906";
+}
+.info-critic_rating_5:before {
+  content: "\e907";
+}
+.info-date_creation:before {
+  content: "\e908";
+}
+.info-hot:before {
+  content: "\e909";
+}
+.info-id:before {
+  content: "\e90a";
+}
+.info-link:before {
+  content: "\e90b";
+}
+.info-money:before {
+  content: "\e90c";
+}
+.info-name:before {
+  content: "\e90d";
+}
+.info-rating_average:before {
+  content: "\e90e";
+}
+.info-rating_sum:before {
+  content: "\e90f";
+}
+.info-rating_total:before {
+  content: "\e910";
+}
+.info-trash_off:before {
+  content: "\e911";
+}
+.info-trash_on:before {
+  content: "\e912";
+}
+.info-user_rating:before {
+  content: "\e913";
+}
+.info-user_rating_down:before {
+  content: "\e914";
+}
+.info-user_rating_up:before {
+  content: "\e915";
+}
+.info-viewed:before {
+  content: "\e916";
+}
+.info-views_off:before {
+  content: "\e917";
+}
+.info-views_on:before {
+  content: "\e918";
+}

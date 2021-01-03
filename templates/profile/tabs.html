@@ -1,0 +1,105 @@
+{% load i18n %}
+{% load static %}
+
+<form class="profile_tabs" action="{% url 'profiles:profile_page' args.user.id %}" method="GET">
+</form>
+
+<!--ADD Button in profile_tabs-->
+<script type="text/javascript">
+	 add_button(
+		'.profile_tabs',
+		'usr_but_arhive',
+		'user-archive_off',
+		'tab',
+		'arhive'
+	)
+	 add_button(
+		'.profile_tabs',
+		'usr_but_user_opt',
+		'user-followers',
+		'tab',
+		'user_opt'
+	)
+	 add_button(
+		'.profile_tabs',
+		'usr_but_posts',
+		'system-page',
+		'tab',
+		'posts'
+	)
+	 add_button(
+		'.profile_tabs',
+		'usr_but_info',
+		'user-surname-v2',
+		'tab',
+		'info'
+	)
+	 add_button(
+		'.profile_tabs',
+		'usr_but_thought',
+		'user-thoughts_on',
+		'tab',
+		'thought'
+	)
+	 add_button(
+		'.profile_tabs',
+		'usr_but_achievements',
+		'info-critic_rating_3',
+		'tab',
+		'achievements'
+	)
+	
+</script>
+<!--only own user-->
+{% if args.user_allow %}
+<script type="text/javascript">
+	add_button(
+		'.profile_tabs',
+		'usr_but_edit_opt',
+		'user-options',
+		'tab',
+		'edit_opt'
+	)
+	add_button(
+		'.profile_tabs',
+		'usr_but_filter',
+		'post-filters',
+		'tab',
+		'filter'
+		)
+	 add_button(
+		'.profile_tabs',
+		'usr_but_money',
+		'user-wallet',
+		'tab',
+		'money'
+	)
+	 add_button(
+		'.profile_tabs',
+		'usr_but_statistics',
+		'user-statistics',
+		'tab',
+		'statistics'
+	)
+	</script>
+{% endif %}
+
+
+
+
+
+
+<script type="text/javascript">
+$('document').ready(function(){
+	hover_info('usr_but_arhive', "{% trans 'info 1' %}","#")
+	hover_info('usr_but_user_opt', "{% trans 'info 1' %}","#")
+	hover_info('usr_but_posts', "{% trans 'info 1' %}","#")
+	hover_info('usr_but_info', "{% trans 'info 1' %}","#")
+	hover_info('usr_but_thought', "{% trans 'info 1' %}","#")
+	hover_info('usr_but_edit_opt', "{% trans 'info 1' %}","#")
+	hover_info('usr_but_filter', "{% trans 'info 1' %}","#")
+	hover_info('usr_but_money', "{% trans 'info 1' %}","#")
+	hover_info('usr_but_statistics', "{% trans 'info 1' %}","#")
+	hover_info('usr_but_achievements', "{% trans 'info 1' %}","#")
+});
+</script> 

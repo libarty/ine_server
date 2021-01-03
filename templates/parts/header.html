@@ -1,0 +1,208 @@
+{% load i18n_urls %}
+
+<!-- rename lang code -->
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGE %}
+{% get_language_info_list for LANGUAGE as languages %}
+
+
+
+
+
+
+
+
+
+
+<!--header-->
+<div class="header">
+<!--header left block-->
+<a class="header_left title" href="{% url 'pages:home' %}">{{ site_name }}</a>
+<!--header right block-->
+<div class="header_right">
+
+
+
+
+
+
+<!--header menu for site navigation-->
+<ul class='header_menu_static header_menu'>
+<!--News project-->
+<li><a class="h_page_news system-news" href="{% url 'posts:index' %}" > {% trans 'Posts' %}</a></li>
+<!--add new post-->
+<li><a class="h_page_add system-add" href="{% url 'pages:add' %}"> {% trans 'Add' %}</a></li>
+<!--ainformation about project-->
+<li><a class="h_page_wiki system-wiki" href="{% url 'pages:info' %}"> {% trans 'Info' %}</a></li>
+
+
+
+
+
+<!--the tab with choice a profile tab-->
+<li>
+	<a class="h_page_profile system-home" href="{% if user.is_authenticated %}{% url 'profiles:profile_page' user.id %}{% else %}#{% endif %}"> {% trans 'Profile' %}</a>
+	<ul>
+	<!--check user-->
+	{% if user.is_authenticated %}
+	<!--log out-->
+	<li><a class="h_page_exit system-sign_out" href="{% url 'logout'%}?next={{request.path}}"> {% trans 'Sign out' %}</a></li>
+	<!--user page-->
+	<li>
+		<a class="h_page_office  user-user" href="{% url 'profiles:profile_page' user.id %}"> {% trans 'Office' %}</a>
+		<ul>
+		<li><a class="h_page_arhive user-archive_off" href="{% url 'profiles:profile_page' user.id %}?tab=arhive"> {% trans 'Arhive' %}</a></li>
+		<li><a class="h_page_u_option user-followers" href="{% url 'profiles:profile_page' user.id %}?tab=user_opt"> {% trans 'User.opt' %}</a></li>
+		<li><a class="h_page_posts system-page" href="{% url 'profiles:profile_page' user.id %}?tab=posts"> {% trans 'Posts' %}</a></li>
+		<li><a class="h_page_filter post-filters" href="{% url 'profiles:profile_page' user.id %}?tab=filter"> {% trans 'Filter' %}</a></li>
+		<li><a class="h_page_money user-wallet" href="{% url 'profiles:profile_page' user.id %}?tab=money"> {% trans 'Money' %}</a></li>
+		<li><a class="h_page_statistics user-user_statistics" href="{% url 'profiles:profile_page' user.id %}?tab=statistics"> {% trans 'Statistics' %}</a></li>
+		<li><a class="h_page_info user-surname-v2" href="{% url 'profiles:profile_page' user.id %}?tab=info"> {% trans 'Info.us' %}</a></li>
+		<li><a class="h_page_e_option user-options" href="{% url 'profiles:profile_page' user.id %}?tab=edit_opt"> {% trans 'Edit.opt' %}</a></li>
+		<li><a class="h_page_thought user-thoughts_on" href="{% url 'profiles:profile_page' user.id %}?tab=thought"> {% trans 'Thought' %}</a></li>
+		</ul>
+	</li>
+	{% else %}
+	<!--log in-->
+	<li><a class="h_page_enter system-sign_in" href="{% url 'profiles:login'%}"> {% trans 'Sign in' %}</a></li>
+	<!--register in the system-->
+	<li><a class="h_page_registrations user-add_user" href="{% url 'profiles:login'%}"> {% trans 'Sign up' %}</a></li>
+	{% endif %}
+	</ul>
+</li>
+<!--choice lang for saite-->
+<li class="lang_main">
+	<a class="lang-{{LANGUAGE_CODE}} lang-number" href="#"></a>
+	<ul>
+		{% for language in languages %}
+			<li><a class="lang-{{language.code}} lang-number" href="{% change_lang language.code %}"></a></li>
+		{% endfor %}
+	</ul>
+</li>
+</li>
+
+</ul>
+<div class="header_button">
+<a href="#" class="header_icon"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+<!--absolute block move up and down-->
+<div class="header_absolute">
+
+<!--menu -->
+<form class="search_menu" action="{% url 'posts:index'  %}" method='POST' >
+	{% csrf_token %}
+	<div class="search_field" ></div>
+	<button class="search_submit">go</button>
+</form>
+
+
+<div class="header_menu_absolute">
+</div>
+<script type="text/javascript">
+/*add field*/
+add_field(
+	'.search_field',
+	'header_field',
+	['red','blue', 'yellow', 'green', 'gray', 'pink', 'black', 'white', 'brown','purple'],
+	true
+)
+
+
+
+/*copy menu*/
+$('.header_menu_absolute').html($('.header_menu').html());
+$('.header_menu_absolute').addClass('header_menu');
+
+/*ani menu*/
+click_act('header_icon', ['header_absolute'])
+</script>
+
+
+
+
+</div>
+
+
+
+
+<!--Button for phone header or search program-->	
+
+<script type="text/javascript">
+function resize_header(){
+if(check_win()){
+$('.header_icon').removeClass('system-search').addClass('system-menu');
+$('.header_menu_static').hide();
+$('.header_menu_absolute').show();
+}else{
+$('.header_icon').removeClass('system-menu').addClass('system-search');
+$('.header_menu_static').show();
+$('.header_menu_absolute').hide();
+
+
+}
+}
+
+resize_header()
+
+$(window).resize(function() {
+resize_header()
+});
+</script>
+
+
+
+
+<!--Info hover-->	
+<script type="text/javascript">
+$('document').ready(function(){
+	hover_info('h_page_news', "{% trans 'Posts from all users' %}")
+	hover_info('h_page_add', "{% trans 'Add page work only in client' %}")
+	hover_info('h_page_wiki', "{% trans 'Page about program' %}")
+	hover_info('h_page_exit', "{% trans 'Log out of the site' %}")
+	hover_info('h_page_office', "{% trans 'Home page' %}")
+	hover_info('h_page_arhive', "{% trans 'Arhive with favorite posts' %}")
+	hover_info('h_page_u_option', "{% trans 'Edit profile' %}")
+	hover_info('h_page_profile', "{% trans 'Profile page' %}")
+	hover_info('h_page_posts', "{% trans 'Page with posts from user' %}")
+	hover_info('h_page_filter', "{% trans 'Page filter' %}")
+	hover_info('h_page_statistics', "{% trans 'Page statistics' %}")
+	hover_info('h_page_info', "{% trans 'Information about user' %}")
+	hover_info('h_page_e_option', "{% trans 'Options page' %}")
+	hover_info('h_page_thought', "{% trans 'Page thought' %}")
+	hover_info('h_page_enter', "{% trans 'Page enter' %}")
+	hover_info('h_page_registrations', "{% trans 'Page registrations' %}")
+	hover_info('lang_main', "{% trans 'Change lang program' %}")
+});
+</script>
+
+
+
+
+

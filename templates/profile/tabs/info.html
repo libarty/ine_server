@@ -1,0 +1,55 @@
+<script type="text/javascript">
+	$('#usr_but_info').addClass('but_block_act')
+</script>
+
+
+
+
+
+<form class="change_user_model" action="{% url 'profiles:change_user' args.user.id %}" method="POST">
+{% if args.user_allow %}
+	{% csrf_token %}
+{% endif %}
+
+
+
+
+<div class="user_info_fields"></div>
+
+<div class="user_info_exs_block"></div>
+{% include "parts\check_password.html" %}
+
+
+</form>
+
+
+
+
+<script type="text/javascript">
+	//show for all users
+	add_input('.user_info_fields','user_name_field',"text","user_name_field",'{{args.user.username}}','user-user')
+	
+{% if args.user_allow %}
+	// contact fields
+	add_input('.user_info_fields','user_email_field',"text","user_email_field",'{{args.user.email}}','user-email')
+	add_input('.user_info_fields','user_pass_field',"password","user_pass_field",'pass','user-password')
+	add_input('.user_info_fields','user_phone_field',"text","user_phone_field",'{{args.extra.phone}}','user-phone')
+	//image change
+	add_exradio('.user_info_exs_block','tesz-back',`{{args.form.back_id}}`,'back_img','background-',[200,100],'{{args.extra.back_id}}')
+	add_exradio('.user_info_exs_block','tesz-icon',`{{args.form.icon_id}}`,'icon_img','avatar-',[100],'{{args.extra.icon_id}}','{{args.extra.icon_colors}}')
+	
+	
+{% else %} 
+	$( "#user_name_field input" ).prop( "disabled", true );
+{% endif %} 
+
+	//not active fields
+	add_input('.user_info_fields','user_karma_field',"number","",'{{args.extra.karma}}','user-karma')
+	add_input('.user_info_fields','user_level_field',"number","",'{{args.extra.level}}','user-level')
+	$( "#user_karma_field input" ).prop( "disabled", true );
+	$( "#user_level_field input" ).prop( "disabled", true );
+</script>
+
+
+
+

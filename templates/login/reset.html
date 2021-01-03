@@ -1,0 +1,44 @@
+{% load i18n %}
+
+<p class="login_title">{% trans 'Change password' %}</p>
+<div>
+	<p>{% trans 'New password:' %}</p>
+	<input class="form-control" type="password" id="id_new_password1" name="new_password1" value="">
+</div>
+{{ form.new_password1.errors }}
+<div>
+	<p>{% trans 'Confirm password:' %}</p>
+	<input class="form-control" type="password" id="id_new_password2" name="new_password2" value="">
+</div>
+{{ form.new_password2.errors }}
+
+
+
+
+{% if args.login_error %}
+	<p class="login_error">LoginError: {{ args.login_error }}</p>
+{% endif %}
+<div class="button_triangle">
+	<div class="button_back">
+		<p>{% trans 'Back Login' %}</p>
+		<div class="button_area">
+			<div class="fake_button_login" onClick="window.location.href='{% url 'profiles:login'%}'" ></div>
+		</div>
+	</div>
+	<div class="button_next">
+		<p>{% trans 'Change password' %}</p>
+		<div class="button_area">
+			<button type="submit" name="Res" value='True'></button>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+

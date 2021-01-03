@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Login{% endblock %} 
+
+
+
+{% block head %}
+{% include "parts\head.html" %}
+
+
+
+
+{% endblock %}
+
+{% block content %}
+{% include "parts\preloader.html" %}
+
+<!--Block fot background animation -->
+<div class="back_animation">
+</div>
+
+<!--Block login -->
+<div class="login_back">
+
+<div class="login_block">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form class="login_form" action="{% url 'profiles:login'  %}" method='POST'>
+	{% csrf_token %}
+	{% if args.where == 1 %}
+		{% include "login\sign_in.html" %}
+	{% elif args.where == 2 %}
+		{% include "login\sign_up.html" %}
+	{% elif args.where == 3 %}
+		{% include "login\code.html" %}
+	{% elif args.where == 4 %}
+		{% include "login\restore.html" %}
+	{% endif %}
+</form>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %} 

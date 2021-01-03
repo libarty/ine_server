@@ -1,0 +1,107 @@
+
+[class^="lang-"], [class*=" lang-"] {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+[class^="lang-"]:before, [class*=" lang-"]:before{
+content: "";
+width:35px;
+height:30px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:0.6em;
+}
+
+
+.lang-ar:before{
+	background:url(lang/en.svg) round #fc00;
+	content: "+90";
+}
+.lang-ca:before{
+	background:url(lang/ca.svg) round #fc00;
+	content: "+1";
+}
+.lang-cz:before{
+	background:url(lang/cz.svg) round #fc00;
+	content: "+420";
+}
+.lang-de:before{
+	background:url(lang/de.svg) round #fc00;
+	content: "+49";
+}
+.lang-en:before{
+	background:url(lang/en.svg) round #fc00;
+	content: "+246";
+}
+.lang-es:before{
+	background:url(lang/es.svg) round #fc00;
+	content: "+34";
+}
+.lang-eu:before{
+	background:url(lang/eu.svg) round #fc00;
+	content: "+0";
+}
+.lang-fr:before{
+	background:url(lang/fr.svg) round #fc00;
+	content: "+33";
+}
+.lang-gr:before{
+	background:url(lang/gr.svg) round #fc00;
+	content: "+30";
+}
+.lang-he:before{
+	background:url(lang/he.svg) round #fc00;
+	content: "+972";
+}
+.lang-hi:before{
+	background:url(lang/hi.svg) round #fc00;
+	content: "+91";
+}
+.lang-it:before{
+	background:url(lang/it.svg) round #fc00;
+	content: "+39";
+}
+.lang-ja:before{
+	background:url(lang/ja.svg) round #fc00;
+	content: "+81";
+}
+.lang-ml:before{
+	background:url(lang/ml.svg) round #fc00;
+	content: "+0";
+}
+.lang-pl:before{
+	background:url(lang/pl.svg) round #fc00;
+	content: "+48";
+}
+.lang-ru:before{
+	background:url(lang/ru.svg) round #fc00;
+	content: "+7";
+}
+.lang-sv:before{
+	background:url(lang/sv.svg) round #fc00;
+	content: "+46";
+}
+.lang-zh:before{
+	background:url(lang/zh.svg) round #fc00;
+	content: "+86";
+}
+
+
+.lang-number:before{
+	content: "";
+
+}
+
+
+
+
+
+
+
+
+
+
+

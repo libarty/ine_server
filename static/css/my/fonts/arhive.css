@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'arhive';
+  src:  url('fonts/arhive.eot?koe3rg');
+  src:  url('fonts/arhive.eot?koe3rg#iefix') format('embedded-opentype'),
+    url('fonts/arhive.ttf?koe3rg') format('truetype'),
+    url('fonts/arhive.woff?koe3rg') format('woff'),
+    url('fonts/arhive.svg?koe3rg#arhive') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="arhive-"], [class*=" arhive-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'arhive' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.arhive-add_folder:before {
+  content: "\e900";
+}
+.arhive-delete_folder:before {
+  content: "\e901";
+}
+.arhive-empty_folder:before {
+  content: "\e902";
+}
+.arhive-folder:before {
+  content: "\e903";
+}
+.arhive-opened_folder:before {
+  content: "\e904";
+}
+.arhive-out_folder:before {
+  content: "\e905";
+}
+.arhive-redo:before {
+  content: "\e906";
+}
+.arhive-undo:before {
+  content: "\e907";
+}

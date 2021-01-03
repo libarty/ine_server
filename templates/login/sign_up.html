@@ -1,0 +1,93 @@
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGE %}
+{% get_language_info_list for LANGUAGE as languages %}
+
+
+
+
+
+
+<p class="login_title">{% trans 'Sign up' %}</p>
+<div>
+	<p>{% trans 'Login' %}</p>
+	<input type="text" required=''value='{{args.login}}'  name="Login" placeholder="Login"><br>
+</div>
+<div>
+	<p>{% trans 'Password' %}</p>
+	<input type="password" required=''value='{{args.password}}'  name="Password" placeholder="Password"><br>
+</div>
+<div>
+	<p>{% trans 'Confirm password' %}</p>
+	<input type="password" required=''value='{{args.password_agin}}'  name="PasswordA" placeholder="Password"><br>
+</div>
+<div>
+	<p>{% trans 'Email' %}</p>
+	<input type="text" required=''value='{{args.email}}'  name="Email" placeholder="Email"><br>
+</div>
+<div class="enter_number">
+	<p>{% trans 'Phone' %}</p>
+	<div class="enter_number_content">
+		<div class="contry_number"></div>
+		<input type="number" required=''value='{{args.phone}}'  name="Phone" placeholder="000 000 000">
+	</div>
+	
+
+</div>
+<script type="text/javascript">
+var list_lang ={
+	{% for language in languages %}
+		'lang_{{language.code}}':{'icon':'lang-{{language.code}}','text':''},
+	{% endfor %}
+};
+list_lang['lang_{{LANGUAGE_CODE}}']['selected'] = true;
+
+add_select(
+	'.contry_number',
+	'select_contry_number',
+	list_lang,
+	false,
+	false
+);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% if args.login_error %}
+	<p class="login_error">LoginError: {{ args.login_error }}</p>
+{% endif %}
+<div class="button_triangle">
+	<div class="button_back">
+		<p>{% trans 'Back Login' %}</p>
+		<div class="button_area">
+			<button type="submit" name="Back" value='True'></button>
+		</div>
+	</div>
+	<div class="button_next">
+		<p>{% trans 'Next' %}</p>
+		<div class="button_area">
+			<button type="submit" name="Next" value='True'></button>
+		</div>
+	</div>
+</div>

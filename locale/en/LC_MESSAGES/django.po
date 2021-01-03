@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-11 15:15+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\login.html:51
+msgid "Sign in"
+msgstr "Sign in"
+
+#: .\templates\login.html:53
+msgid "Login"
+msgstr "Login"
+
+#: .\templates\login.html:57 .\templates\login.html:73
+msgid "Password"
+msgstr "Password"
+
+#: .\templates\login.html:62
+msgid "Log in"
+msgstr "Log in"
+
+#: .\templates\login.html:63 .\templates\login.html:67
+msgid "Registration"
+msgstr "Registration"
+
+#: .\templates\login.html:69
+msgid "Nickname"
+msgstr "Nickname"
+
+#: .\templates\login.html:77
+msgid "Phone"
+msgstr "Phone"
+
+#: .\templates\login.html:81
+msgid "Email"
+msgstr ""
+
+#: .\templates\login.html:85
+msgid "Back"
+msgstr "Back"
+
+#: .\templates\login.html:86
+msgid "Next"
+msgstr "Next"
+
+#: .\templates\login.html:91 .\templates\login.html:95
+msgid "Code"
+msgstr "Code"
+
+#: .\templates\login.html:99
+msgid "Cancel"
+msgstr "Cancel"
+
+#: .\templates\login.html:100
+msgid "Check"
+msgstr "Check"

@@ -1,0 +1,31 @@
+{% load i18n %}
+{% load static %}
+
+<div class="profile_header" style="background:url({% static 'css/my/img/background' %}/{{args.extra.back_id}}.png) round #fc00;">
+	<div class="user_block" >
+		<div class="user_icon_block"></div>
+		<script type="text/javascript">
+			var colors = ("{{args.extra.icon_colors}}").split(',');
+			colors[1] = colors[1] || '#22222e';
+			add_icon('avatar-{{args.extra.icon_id}}','.user_icon_block',false,'user_icon',)
+			$('#user_icon a').css('color',colors[0]);
+			$('#user_icon').css('background-color',colors[1]);
+		</script>
+	
+		<div class="user_info">
+			<p class="user_info_username">Username:{{args.user.username}}</p>
+			<p class="user_info_karma">Karma:{{args.extra.karma}}</p>
+			<p class="user_info_level">LVL:{{args.extra.level}}</p>
+		</div>
+	</div>
+</div>
+
+<!--Info hover-->	
+<script type="text/javascript">
+$('document').ready(function(){
+	hover_info('user_icon_block', "{% trans 'info 1' %}")
+	hover_info('user_info_username', "{% trans 'info 1' %}")
+	hover_info('user_info_karma', "{% trans 'info 1' %}")
+	hover_info('user_info_level', "{% trans 'info 1' %}")
+});
+</script>

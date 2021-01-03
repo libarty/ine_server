@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 666.66667 500"
+   width="4000"
+   height="3000"
+   version="1.1"
+   id="svg19666"
+   sodipodi:docname="he.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata19672">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs19670" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="877"
+     id="namedview19668"
+     showgrid="false"
+     inkscape:zoom="0.032777778"
+     inkscape:cx="-7865.8764"
+     inkscape:cy="-4858.6282"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg19666">
+    <inkscape:grid
+       type="xygrid"
+       id="grid19674" />
+  </sodipodi:namedview>
+  <rect
+     width="666.66669"
+     height="500"
+     id="rect19634"
+     x="0"
+     y="-3.5527137e-14"
+     style="fill:#ff9933;stroke-width:3.14269686" />
+  <rect
+     width="666.66669"
+     height="333.33334"
+     y="166.66667"
+     id="rect19636"
+     x="0"
+     style="fill:#ffffff;stroke-width:3.14269686" />
+  <rect
+     width="666.66669"
+     height="166.66667"
+     y="333.33334"
+     id="rect19638"
+     x="0"
+     style="fill:#128807;stroke-width:3.14269686" />
+  <g
+     transform="matrix(3.1538956,0,0,3.1538956,331.90974,250.74349)"
+     id="g19664">
+    <circle
+       r="20"
+       id="circle19640"
+       cx="0"
+       cy="0"
+       style="fill:#000088" />
+    <circle
+       r="17.5"
+       id="circle19642"
+       cx="0"
+       cy="0"
+       style="fill:#ffffff" />
+    <circle
+       r="3.5"
+       id="circle19644"
+       cx="0"
+       cy="0"
+       style="fill:#000088" />
+    <g
+       id="d">
+      <g
+         id="c">
+        <g
+           id="b">
+          <g
+             id="a">
+            <circle
+               r="0.875"
+               transform="rotate(7.5,-8.75,133.4992)"
+               id="circle19646"
+               cx="0"
+               cy="0"
+               style="fill:#000088" />
+            <path
+               d="M 0,17.5 0.6,7 C 0.6,7 0,2 0,2 0,2 -0.6,7 -0.6,7 Z"
+               id="path19648"
+               inkscape:connector-curvature="0"
+               style="fill:#000088" />
+          </g>
+          <use
+             xlink:href="#a"
+             transform="rotate(15)"
+             id="use19651"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+        </g>
+        <use
+           xlink:href="#b"
+           transform="rotate(30)"
+           id="use19654"
+           x="0"
+           y="0"
+           width="100%"
+           height="100%" />
+      </g>
+      <use
+         xlink:href="#c"
+         transform="rotate(60)"
+         id="use19657"
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
+    </g>
+    <use
+       xlink:href="#d"
+       transform="rotate(120)"
+       id="use19660"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <use
+       xlink:href="#d"
+       transform="rotate(-120)"
+       id="use19662"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+  </g>
+</svg>

@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'progress';
+  src:  url('fonts/progress.eot?o6fmks');
+  src:  url('fonts/progress.eot?o6fmks#iefix') format('embedded-opentype'),
+    url('fonts/progress.ttf?o6fmks') format('truetype'),
+    url('fonts/progress.woff?o6fmks') format('woff'),
+    url('fonts/progress.svg?o6fmks#progress') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="progress-"], [class*=" progress-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'progress' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.progress-attentive_user:before {
+  content: "\e900";
+}
+.progress-bad_critic:before {
+  content: "\e901";
+}
+.progress-bad_karma:before {
+  content: "\e902";
+}
+.progress-banker:before {
+  content: "\e903";
+}
+.progress-businessman:before {
+  content: "\e904";
+}
+.progress-everyone_to_be_silent:before {
+  content: "\e905";
+}
+.progress-favorite_of_critics:before {
+  content: "\e906";
+}
+.progress-good_critic:before {
+  content: "\e907";
+}
+.progress-good_karma:before {
+  content: "\e908";
+}
+.progress-maecenas:before {
+  content: "\e909";
+}
+.progress-need_to_save:before {
+  content: "\e90a";
+}
+.progress-needs_attention:before {
+  content: "\e90b";
+}
+.progress-not_indifferent:before {
+  content: "\e90c";
+}
+.progress-real_fan:before {
+  content: "\e90d";
+}
+.progress-sit_to_the_end:before {
+  content: "\e90e";
+}
+.progress-stability:before {
+  content: "\e90f";
+}
+.progress-star:before {
+  content: "\e910";
+}

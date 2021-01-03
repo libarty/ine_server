@@ -1,0 +1,18 @@
+<!-- the base templete connect all other templetes-->
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+<meta charset='UTF-8'>
+<title>{% block title %}Document{% endblock %}</title>
+{% block head %}{% endblock %}
+</head>
+<body>
+{% include "parts\preloader.html" %}
+<div class="site_full">
+{% block content %}{% endblock %}
+</div>
+<!-- div for copy all site for blur effect-->
+<div class='site_copy_blur'></div>
+</body>
+</html>
+

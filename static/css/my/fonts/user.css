@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'user';
+  src:  url('fonts/user.eot?7u6auj');
+  src:  url('fonts/user.eot?7u6auj#iefix') format('embedded-opentype'),
+    url('fonts/user.ttf?7u6auj') format('truetype'),
+    url('fonts/user.woff?7u6auj') format('woff'),
+    url('fonts/user.svg?7u6auj#user') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="user-"], [class*=" user-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'user' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.user-add_user:before {
+  content: "\e900";
+}
+.user-anon:before {
+  content: "\e901";
+}
+.user-archive_off:before {
+  content: "\e902";
+}
+.user-archive_on:before {
+  content: "\e903";
+}
+.user-ban:before {
+  content: "\e904";
+}
+.user-birthday:before {
+  content: "\e905";
+}
+.user-bitcoin:before {
+  content: "\e906";
+}
+.user-critic:before {
+  content: "\e907";
+}
+.user-email:before {
+  content: "\e908";
+}
+.user-followers:before {
+  content: "\e909";
+}
+.user-following:before {
+  content: "\e90a";
+}
+.user-gender:before {
+  content: "\e90b";
+}
+.user-karma:before {
+  content: "\e90c";
+}
+.user-karma_bad:before {
+  content: "\e90d";
+}
+.user-karma_good:before {
+  content: "\e90e";
+}
+.user-level:before {
+  content: "\e90f";
+}
+.user-name:before {
+  content: "\e910";
+}
+.user-name-v2:before {
+  content: "\e911";
+}
+.user-nickname:before {
+  content: "\e912";
+}
+.user-online:before {
+  content: "\e913";
+}
+.user-options:before {
+  content: "\e914";
+}
+.user-password:before {
+  content: "\e915";
+}
+.user-phone:before {
+  content: "\e916";
+}
+.user-settings:before {
+  content: "\e917";
+}
+.user-statistics:before {
+  content: "\e918";
+}
+.user-surname:before {
+  content: "\e919";
+}
+.user-surname-v2:before {
+  content: "\e91a";
+}
+.user-thoughts_on:before {
+  content: "\e91b";
+}
+.user-thoughts-off:before {
+  content: "\e91c";
+}
+.user-user:before {
+  content: "\e91d";
+}
+.user-wallet:before {
+  content: "\e91e";
+}
+.user-withdraw:before {
+  content: "\e91f";
+}

@@ -1,0 +1,1 @@
+web: gunicorn import_export.wsgi --log-file - 

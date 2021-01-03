@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+
+{% block title %}Profile{% endblock %} 
+
+
+
+{% block head %}
+{% include "parts\head.html" %}
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+{% include "parts\header.html" %}
+
+{% include "parts\newsbar.html" %}
+
+
+
+<div class='content_block'>
+	 
+
+	<div class='articles'>
+		<div class="container">
+			<div class="profile">
+				{% include "profile\header.html" %}
+				{% include "profile\tabs.html" %}
+				<!--user content -->
+				<div class="profile_content">
+					{% if args.get == 'arhive' %}
+						{% include "profile\tabs\arhive.html" %}
+					{% elif args.get == 'user_opt' %}
+						{% include "profile\tabs\user_opt.html" %}
+					{% elif args.get == 'posts' %}
+						{% include "profile\tabs\posts.html" %}
+					{% elif args.get == 'filter' %}
+						{% include "profile\tabs\filter.html" %}
+					{% elif args.get == 'money' %}
+						{% include "profile\tabs\money.html" %}
+					{% elif args.get == 'statistics' %}
+						{% include "profile\tabs\statistics.html" %}
+					{% elif args.get == 'info' %}
+						{% include "profile\tabs\info.html" %}
+					{% elif args.get == 'edit_opt' %}
+						{% include "profile\tabs\edit_opt.html" %}
+					{% elif args.get == 'thought' %}
+						{% include "profile\tabs\thought.html" %}
+					{% elif args.get == 'achievements' %}
+						{% include "profile\tabs\achievements.html" %}
+					{% else %}
+						{% include "profile\tabs\info.html" %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% include "parts\footer.html" %}
+
+
+
+
+{% endblock %} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+

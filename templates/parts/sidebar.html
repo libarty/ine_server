@@ -1,0 +1,587 @@
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGE %}
+{% get_language_info_list for LANGUAGE as languages %}
+<!--Sidebar more complex search engine-->
+
+
+
+
+<!--Button-->
+<div class="sidebar_margin">
+	<div class="sidebar_button"></div>
+	<!--Menu-->
+	<div class="sidebar_block"> 
+
+		<form  action="{% url 'posts:index'  %}" method='POST' >
+			{% csrf_token %}
+
+
+			<ul class="sidebar_menu">
+
+			<li><a class="system-news" href="#" >Fields</a>
+				<ul>
+					<li class="select_field"></li>
+				</ul>
+			</li>
+
+
+			<li  class="sidebar_select_list" ><a class="system-news" href="#" >List</a>
+				<ul>
+					<li class="select_list_big"></li>
+					<li class="select_list_small"></li>
+				</ul>
+			</li>
+
+
+
+			<li><a class="system-news" href="#" >Checkbox</a>
+				<ul>
+					<li class="select_checkbox"></li>
+				</ul>
+			</li>
+
+
+			<li><a class="system-news" href="#" >Between</a>
+				<ul>
+					<li><div class="between_windows"></div></li>
+				</ul>
+			</li>
+
+			<li id="sidebar_search_run"></li>
+
+			</ul>
+		</form>
+	
+	</div>
+</div>
+
+<!--add fields-->
+<script type="text/javascript">
+	add_icon('system-menu','.sidebar_button',false,'icon_sidebar_menu',)
+	/*ani menu*/
+	click_act('icon_sidebar_menu', ['sidebar_block'])
+
+
+	add_field(
+		'.select_field',
+		'sidebar_field',
+		['red','blue', 'yellow', 'green', 'gray', 'pink', 'black', 'white', 'brown','purple'],
+		true
+	)
+
+	add_checkbox(
+		'type_searh',
+		['info-name','post-tags','user-user'],
+		'#sidebar_field'
+	);
+
+
+
+	add_select(
+		'.select_list_big',
+		'list_filters',
+		{
+		'list_date':{'icon':'info-date_creation','text':'Date','selected':true},
+		'list_id':{'icon':'info-id','text':'ID',},
+		'list_random':{'icon':'post-random','text':'Random',},
+		'list_name':{'icon':'info-name','text':'Name',},
+		'list_comments':{'icon':'post-comments_on','text':'Comments',},
+		'list_download':{'icon':'post-download','text':'Download',},
+		'list_rct':{'icon':'info-user_rating_up','text':'RCT',},
+		'list_rcv':{'icon':'info-user_rating','text':'RCV',},
+		'list_rut':{'icon':'info-rating_sum','text':'RUT',},
+		'list_ruv':{'icon':'info-rating_total','text':'RUV',},
+		'list_views':{'icon':'info-views_on','text':'Views',},
+		'list_viewed':{'icon':'info-viewed','text':'Viewed',},
+		'list_bookmarks':{'icon':'info-bookmarks-on','text':'Bookmarks',},
+		'list_hot':{'icon':'info-hot','text':'Hot',},
+		'list_money':{'icon':'info-money','text':'Money',},
+		},
+		'post-filters'
+	);
+
+
+	add_select(
+		'.select_list_small',
+		'list_num',
+		{
+		'num_5':{'text':'5','selected':true},
+		'num_10':{'text':'10'},
+		'num_25':{'text':'25'},
+		'num_50':{'text':'50'},
+		'num_100':{'text':'100'},
+		'full':{'text':'full'}
+		},
+		'post-num',
+		false
+	);
+
+	add_select(
+		'.select_list_small',
+		'list_time',
+		{
+		'time_day':{'text':'day','selected':true},
+		'time_week':{'text':'week'},
+		'time_month':{'text':'month'},
+		'time_year':{'text':'year'},
+		'all':{'text':'all'}
+		},
+		'post-by_date',
+		false
+	);
+
+
+
+
+
+	// lang search
+	var list_lang ={
+		{% for language in languages %}
+			'lang_{{language.code}}':{'icon':'lang-{{language.code}} lang-number','text':''},
+		{% endfor %}
+	};
+	list_lang['lang_{{LANGUAGE_CODE}}']['selected'] = true;
+
+	add_select(
+		'.select_list_small',
+		'list_lang',
+		list_lang,
+		'post-translation',
+		false
+	);
+
+
+
+
+
+
+
+
+
+
+
+	add_checkbox(
+		'sort_amount',
+		['post-asc','post-desc'],
+		'.select_checkbox'
+	);
+	add_checkbox(
+		'my_faworites',
+		['info-bookmarks-off','info-bookmarks-on'],
+		'.select_checkbox'
+	);
+	add_checkbox(
+		'my_virus',
+		['system-attention','post-safely'],
+		'.select_checkbox'
+	);
+	add_checkbox(
+		'black_hourse',
+		['system-delete','info-black_horse'],
+		'.select_checkbox'
+	);
+	add_checkbox(
+		'early_access',
+		['post-critic_time_off','post-critic_time_on'],
+		'.select_checkbox'
+	);
+	add_checkbox(
+		'trash',
+		['info-trash_off','info-trash_on'],
+		'.select_checkbox'
+	);
+
+
+
+
+
+
+
+
+
+
+
+	add_slider(
+	'.between_windows',
+	'between_window',
+	[{
+	'id':'win1',
+	'content':'<div class="win_between win_range win_viewed"></div>',
+	'icon':'info-viewed'
+	},
+	{
+	'id':'win2',
+	'content':'<div class="win_between win_number win_views"></div>',
+	'icon':'info-views_on'
+	},
+	{
+	'id':'win3',
+	'content':'<div class="win_between win_number win_download"></div>',
+	'icon':'post-download'
+	},
+	{
+	'id':'win4',
+	'content':'<div class="win_between win_number win_faworites"></div>',
+	'icon':'info-bookmarks-on'
+	},
+	{
+	'id':'win5',
+	'content':'<div class="win_between win_number win_money"></div>',
+	'icon':'post-money_sum-v1'
+	},
+	{
+	'id':'win6',
+	'content':'<div class="win_between win_number win_comments"></div>',
+	'icon':'post-comments_on'
+	},
+	{
+	'id':'win7',
+	'content':'<div class="win_between win_number win_rut"></div>',
+	'icon':'info-user_rating_up'
+	},
+	{
+	'id':'win8',
+	'content':'<div class="win_between win_number win_ruv"></div>',
+	'icon':'info-user_rating'
+	},
+	{
+	'id':'win9',
+	'content':'<div class="win_between win_number win_rct"></div>',
+	'icon':'info-rating_sum'
+	},
+	{
+	'id':'win10',
+	'content':'<div class="win_between win_number win_rcv"></div>',
+	'icon':'info-rating_total'
+	},
+	{
+	'id':'win11',
+	'content':'<div class="win_between win_range win_rcs"></div>',
+	'icon':'info-rating_average'
+	},
+
+	{
+	'id':'win12',
+	'content':'<div class="win_between win_number win_uk"></div>',
+	'icon':'user-karma'
+	},
+
+	{
+	'id':'win13',
+	'content':'<div class="win_between win_number win_um"></div>',
+	'icon':'user-wallet'
+	},
+	{
+	'id':'win14',
+	'content':'<div class="win_between win_number win_ul"></div>',
+	'icon':'user-user_statistics'
+	},
+	{
+	'id':'win15',
+	'content':'<div class="win_between win_number win_uf"></div>',
+	'icon':'user-followers'
+	},
+	{
+	'id':'win16',
+	'content':'<div class="win_between win_date win_date_create"><div class="min_date_create"></div><div class="max_date_create"></div></div>',
+	'icon':'info-date_creation'
+	}
+
+
+
+	],
+	['system-back-v2','system-next-v2'],
+	0,
+	true,
+	true,
+	'150px',
+	true,
+	['range_hide','prev','cur','next','time_val']
+	);
+
+
+
+
+
+	//'range_hide'
+	add_range(
+		'.win_viewed',
+		'viewed_range',
+		0,
+		100,
+		1,
+		'info-viewed'
+	)
+
+
+
+	add_number(
+	'.win_views',
+	'views_number',
+	0,
+	99999999999999,
+	1,
+	'info-views_on'
+	)
+
+
+	add_number(
+	'.win_download',
+	'download_number',
+	0,
+	99999999999999,
+	1,
+	'post-download'
+	)
+
+	add_number(
+	'.win_faworites',
+	'faworites_number',
+	0,
+	99999999999999,
+	1,
+	'info-bookmarks-on'
+	)
+
+	add_number(
+	'.win_money',
+	'money_number',
+	0,
+	99999999999999,
+	1,
+	'post-money_sum-v1'
+	)
+
+
+	add_number(
+	'.win_comments',
+	'comments_number',
+	0,
+	99999999999999,
+	1,
+	'post-comments_on'
+	)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	add_number(
+	'.win_rut',
+	'rut_number',
+	-99999999999999,
+	99999999999999,
+	1,
+	'info-user_rating_up'
+	)
+	add_number(
+	'.win_ruv',
+	'ruv_number',
+	0,
+	99999999999999,
+	1,
+	'info-user_rating'
+	)
+
+	add_number(
+	'.win_rct',
+	'rct_number',
+	-99999999999999,
+	99999999999999,
+	1,
+	'info-rating_sum'
+	)
+	add_number(
+	'.win_rcv',
+	'rcv_number',
+	0,
+	99999999999999,
+	1,
+	'info-rating_total'
+	)
+
+
+	add_range(
+		'.win_rcs',
+		'rcs_range',
+		1,
+		5,
+		1,
+		'info-rating_average'
+	)
+
+
+
+
+
+
+
+
+
+
+
+
+	add_number(
+	'.win_uk',
+	'uk_number',
+	-99999999999999,
+	99999999999999,
+	1,
+	'user-karma'
+	)
+	add_number(
+	'.win_um',
+	'um_number',
+	0,
+	99999999999999,
+	1,
+	'user-wallet'
+	)
+
+
+	add_number(
+	'.win_ul',
+	'ul_number',
+	0,
+	99999999999999,
+	1,
+	'user-user_statistics'
+	)
+
+
+	add_number(
+	'.win_uf',
+	'uf_number',
+	0,
+	99999999999999,
+	1,
+	'user-followers'
+	)
+
+	//min_date_create
+	//max_date_create
+	var min_date = new Date(2000,0,1);
+	add_date(
+	'.min_date_create',
+	'min_date',
+	min_date,
+	[
+	'yyyy',
+	'mm',
+	'dd'
+	],
+	false,
+	'none'
+	)
+
+
+
+	var max_date = new Date(2000,0,1);
+	add_date(
+	'.max_date_create',
+	'max_date',
+	max_date,
+	[
+	'yyyy',
+	'mm',
+	'dd'
+	],
+	false,
+	'none'
+	)
+
+
+
+	 add_button(
+	'#sidebar_search_run',
+	'sidebar_search_button_run',
+	'system-send-v3'
+	)
+
+
+
+	click_act('sidebar_button',[],false,true)
+
+
+</script>
+
+<!--Info hover-->	
+<script type="text/javascript">
+	$('document').ready(function(){
+		hover_info('my_faworites', "{% trans 'info 1' %}",'#')
+		hover_info('my_virus', "{% trans 'info 1' %}",'#')
+		hover_info('sort_amount', "{% trans 'info 1' %}",'#')
+		hover_info('black_hourse', "{% trans 'info 1' %}",'#')
+		hover_info('trash', "{% trans 'info 1' %}",'#')
+		hover_info('early_access', "{% trans 'info 1' %}",'#')
+		
+		
+		
+		
+		hover_info('slider_windows', "{% trans 'info 1' %}")
+		hover_info('win1', "{% trans 'info 1' %}")
+		hover_info('win2', "{% trans 'info 1' %}")
+		hover_info('win3', "{% trans 'info 1' %}")
+		hover_info('win4', "{% trans 'info 1' %}")
+		hover_info('win5', "{% trans 'info 1' %}")
+		hover_info('win6', "{% trans 'info 1' %}")
+		hover_info('win7', "{% trans 'info 1' %}")
+		hover_info('win8', "{% trans 'info 1' %}")
+		hover_info('win9', "{% trans 'info 1' %}")
+		hover_info('win10', "{% trans 'info 1' %}")
+		hover_info('win11', "{% trans 'info 1' %}")
+		hover_info('win12', "{% trans 'info 1' %}")
+		hover_info('win13', "{% trans 'info 1' %}")
+		hover_info('win14', "{% trans 'info 1' %}")
+		hover_info('win15', "{% trans 'info 1' %}")
+		hover_info('win16', "{% trans 'info 1' %}")
+
+
+
+
+		hover_info('list_date', "{% trans 'info 1' %}")
+		hover_info('list_id', "{% trans 'info 1' %}")
+		hover_info('list_random', "{% trans 'info 1' %}")
+		hover_info('list_name', "{% trans 'info 1' %}")
+		hover_info('list_comments', "{% trans 'info 1' %}")
+		hover_info('list_download', "{% trans 'info 1' %}")
+		hover_info('list_rct', "{% trans 'info 1' %}")
+		hover_info('list_rcv', "{% trans 'info 1' %}")
+		hover_info('list_rut', "{% trans 'info 1' %}")
+		hover_info('list_ruv', "{% trans 'info 1' %}")
+		hover_info('list_views', "{% trans 'info 1' %}")
+		hover_info('list_viewed', "{% trans 'info 1' %}")
+		hover_info('list_bookmarks', "{% trans 'info 1' %}")
+		hover_info('list_hot', "{% trans 'info 1' %}")
+		hover_info('list_money', "{% trans 'info 1' %}")
+		
+		
+		
+		hover_info('list_filters', "{% trans 'info 1' %}","#")
+		
+		
+		
+		hover_info('list_lang', "{% trans 'info 1' %}","#")
+		hover_info('list_time', "{% trans 'info 1' %}","#")
+		hover_info('list_num', "{% trans 'info 1' %}","#")
+
+		
+		
+		
+		hover_info('sidebar_field', "{% trans 'info 1' %}","#")
+	});
+</script>

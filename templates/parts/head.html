@@ -1,0 +1,42 @@
+{% load static %}
+
+
+<!--CSS-->
+
+{% include "parts\root.html" %}
+
+
+
+
+
+<link href="{% static "css\my\style.css" %}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{% static "css\my\img\back.css" %}" rel="stylesheet" type="text/css" media="screen" />
+
+
+<!--JS-->
+<script  src="{% static "js\add\jquery.js" %}" type="text/javascript"></script>
+<script  src="{% static "js\my\preloader.js" %}" type="text/javascript"></script>
+<script  src="{% static "js\my\ani_fun.js" %}" type="text/javascript"></script>
+
+
+<link href="{% static "css\add\quill.show.css" %}" rel="stylesheet" type="text/css" media="screen" />
+
+<script  src="{% static "js\add\quill.js" %}" type="text/javascript"></script>
+
+<script defer="defer" src="{% static "js\my\cookie.js" %}" type="text/javascript"></script>
+
+<!--not correct js-->
+<!-- <script  src="{% static "js\my\back_blur.js" %}" type="text/javascript"></script> -->
+
+
+
+
+
+<script  src="{% static "js\my\block_fields.js" %}" type="text/javascript"></script>
+
+<script  src="{% static "js\add\date.format.js" %}" type="text/javascript"></script>
+
+
+{% include "parts\load_fonts.html" %}
+<script  src="{% static "js\my\hover_info.js" %}" type="text/javascript"></script>
+

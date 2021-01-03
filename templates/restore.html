@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Login{% endblock %} 
+
+
+
+{% block head %}
+{% include "parts\head.html" %}
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block content %}
+{% include "parts\preloader.html" %}
+
+<!--Block fot background animation -->
+<div class="back_animation">
+</div>
+
+<!--Block login -->
+<div class="login_back">
+
+<div class="login_block">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form class="login_form" action="{% url 'profiles:login'  %}" method='POST'>
+	
+	{% include "login\reset.html" %}
+
+</form>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %} 

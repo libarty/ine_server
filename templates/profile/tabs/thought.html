@@ -1,0 +1,231 @@
+{% load i18n %}
+<!-- add class activation for button-->
+<script type="text/javascript">
+	$('#usr_but_thought').addClass('but_block_act')
+</script>
+
+<!--block for all block thought-->
+<div class="thought_block">
+	<!-- cteate only one textarea for authenticated users-->
+	{% if user.is_authenticated %}
+		<div class="thought_editor" style="display:none"></div>
+		<script type="text/javascript">
+			add_textarea('.thought_editor','post_thought');
+		</script>
+	{% endif %} 
+	<!-- add think-->
+	{% if args.user_allow %}
+		<form class="thought_editor-add thing_block" action="{% url 'profiles:add_think' args.user.id %}" method="POST">
+			{% csrf_token %}
+			<div class="thought_editor_but"></div>
+			<div class="thought_editor"></div>
+		</form>
+		
+		<script type="text/javascript">
+			add_icon('post-draw_off','.thought_editor-add > .thought_editor_but',false,'show_text_editor',)
+			
+		</script>
+	{% endif %} 
+	<!--show each think on page from curent user-->
+	{% if args.though %}
+		{% for think in args.contacts %}
+			<div class="thing_block">
+				<!--block with icon and info-->
+				<div class="thing_header">
+					<div class="thing_info">
+						<div class="thing_icon thing_icon-{{think.id}}"></div>
+						<script type="text/javascript">
+							var colors = ("{{think.user.extrauser.icon_colors}}").split(',');
+							colors[1] = colors[1] || '#22222e';
+							add_icon('avatar-{{think.user.extrauser.icon_id}}','.thing_icon-{{think.id}}',false,'user_icon',)
+							$('.thing_icon-{{think.id}} a').css('color',colors[0]);
+							$('.thing_icon-{{think.id}} > div').css('background-color',colors[1]);
+						</script>
+							
+						<div class="thing_info_text">
+							<div><a href="{% url 'profiles:profile_page' think.user.id %}">{{think.user.username}}</a></div>
+							<div>{{think.pud_date}}</div>
+						</div>
+					</div>
+					
+					{% if args.user_allow and think.user == user.username%}
+						<form class="thing_icon thing_delete-{{think.id}}" action=" " method="POST">{% csrf_token %}</form>
+						<script type="text/javascript">
+							add_button('.thing_delete-{{think.id}}','thing_but_delete-{{think.id}}','system-delete','delete_thing','del');
+						</script>
+					{% endif %} 
+				</div>
+
+				
+				
+
+				
+				<!--block content-->
+				<div class="thing_content">
+					{{think.text|safe}}
+				</div>
+				
+				
+				
+				
+				<!--block for add comment to think-->
+				{% if user.is_authenticated %}
+					<form class="thought_editor-{{think.id}} thing_block" action="{% url 'profiles:add_com_think' args.user.id think.id %}" method="POST">
+						{% csrf_token %}
+						<div class="thought_editor_but"></div>
+						<div class="thought_editor"></div>
+					</form>
+					<script type="text/javascript">
+						add_icon('post-draw_off','.thought_editor-{{think.id}} > .thought_editor_but',false,'show_com_text_editor-{{think.id}}',)
+					</script>
+				{% endif %} 
+				
+				
+				
+				
+				
+				
+				
+			
+				<!--block comment to think-->
+				{% if think.commentthinkuser_set.all %}
+					<div class="thing_commnet_block">
+					{% for com in think.commentthinkuser_set.all %}
+						<div class="thing_com_block">
+							<div class="thing_header">
+								<div class="thing_info">
+									<div class="thing_form thing_com_icon-{{think.id}}-{{com.id}}"></div>
+									<script type="text/javascript">
+										var colors = ("{{com.user.extrauser.icon_colors}}").split(',');
+										colors[1] = colors[1] || '#22222e';
+										add_icon('avatar-{{com.user.extrauser.icon_id}}','.thing_com_icon-{{think.id}}-{{com.id}}',false,'user_icon',)
+										$('.thing_com_icon-{{think.id}}-{{com.id}} a').css('color',colors[0]);
+										$('.thing_com_icon-{{think.id}}-{{com.id}} > div').css('background-color',colors[1]);
+										
+									</script>
+									<div class="thing_info_text">
+										<div><a href="{% url 'profiles:profile_page' com.user.id %}">{{com.user.username}}</a></div>
+										<div>{{com.pud_date}}</div>
+									</div>
+								</div>
+								{% if args.user_allow and com.user == user.username%}
+									<form class="thing_form thing_com_del-{{think.id}}-{{com.id}}" action="{% url 'profiles:delete_think' com.id %}" method="POST">{% csrf_token %}</form>
+									<script type="text/javascript">
+										add_button('.thing_com_del-{{think.id}}-{{com.id}}','thing_com_but_del-{{think.id}}-{{com.id}}','system-delete','delete_com_thing','del');
+									</script>
+								{% endif %} 
+							</div>
+							<div class="thing_content">
+								{{com.text|safe}}
+							</div>
+						</div>
+					{% endfor %}
+					</div>
+				{% else %}
+				<li><h2>NON COMMENT</h2></li>
+				{% endif %}
+			</div>
+		{% endfor %}
+	{% else %}
+		<li><h2>not found</h2></li>
+	{% endif %}
+
+
+
+	<!--script for show textarea-->
+	<script type="text/javascript">
+		$('.thing_block').on('click', '.thought_editor_but > div', function() {
+			var par = $(this).closest('.thing_block');
+			var cur_id = par.find('.thought_editor');
+			cur_id.append($('.thought_editor > #post_thought'));
+			//switch icon
+			var act_icon = $('.thing_block .post-draw_on');
+			act_icon.removeClass('post-draw_on');
+			act_icon.addClass('post-draw_off')
+			var icon  = par.find('.thought_editor_but > .icon_block > a')
+			icon.addClass('post-draw_on');
+			icon.removeClass('post-draw_off')
+			//action block for css
+			$('.thing_block').removeClass('thing_block_act');
+			par.toggleClass('thing_block_act');
+		});
+	</script>
+</div>
+
+
+
+
+{% include "parts\pagination.html" %}
+
+<!--Info hover-->	
+<script type="text/javascript">
+$('document').ready(function(){
+	hover_info('text_show_textarea', "{% trans 'info 1' %}",'#')
+	hover_info('show_text_editor', "{% trans 'info 1' %}")
+
+
+hover_info('ed_clean1', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_bold', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_italic', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_underline', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_strike', "{% trans 'info 1' %}",'#')
+hover_info('ed_clean2', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_color', "{% trans 'info 1' %}",'#')
+
+hover_info('ed_but_background', "{% trans 'info 1' %}",'#')
+hover_info('ed_clean3', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_script1', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_script2', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_size', "{% trans 'info 1' %}",'#')
+hover_info('ed_clean4', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_blockquote', "{% trans 'info 1' %}",'#')
+
+
+hover_info('ed_but_code-block', "{% trans 'info 1' %}",'#')
+hover_info('ed_clean5', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_list1', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_list2', "{% trans 'info 1' %}",'#')
+hover_info('ed_clean6', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_indent1', "{% trans 'info 1' %}",'#')
+hover_info('ed_but_indent2', "{% trans 'info 1' %}",'#')
+
+
+hover_info('ed_align_justify', "{% trans 'info 1' %}",'#')
+hover_info('ed_align_center', "{% trans 'info 1' %}",'#')
+hover_info('ed_align_right', "{% trans 'info 1' %}",'#')
+hover_info('ed_align_left', "{% trans 'info 1' %}",'#')
+hover_info('ed_clean7', "{% trans 'info 1' %}",'#')
+hover_info('ed_link', "{% trans 'info 1' %}",'#')
+hover_info('ed_image', "{% trans 'info 1' %}",'#')
+hover_info('ed_video', "{% trans 'info 1' %}",'#')
+	
+hover_info('size_block', "{% trans 'info 1' %}",'#')
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+});
+</script>

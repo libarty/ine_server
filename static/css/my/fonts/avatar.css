@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'avatar';
+  src:  url('fonts/avatar.eot?e7puz0');
+  src:  url('fonts/avatar.eot?e7puz0#iefix') format('embedded-opentype'),
+    url('fonts/avatar.ttf?e7puz0') format('truetype'),
+    url('fonts/avatar.woff?e7puz0') format('woff'),
+    url('fonts/avatar.svg?e7puz0#avatar') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="avatar-"], [class*=" avatar-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'avatar' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.avatar-0:before {
+  content: "\e900";
+}
+.avatar-1:before {
+  content: "\e901";
+}
+.avatar-2:before {
+  content: "\e902";
+}
+.avatar-3:before {
+  content: "\e903";
+}
+.avatar-4:before {
+  content: "\e904";
+}
+.avatar-5:before {
+  content: "\e905";
+}
+.avatar-6-2:before {
+  content: "\e906";
+}
+.avatar-6:before {
+  content: "\e907";
+}
+.avatar-7:before {
+  content: "\e908";
+}
+.avatar-8:before {
+  content: "\e909";
+}
+.avatar-9:before {
+  content: "\e90a";
+}
+.avatar-10:before {
+  content: "\e90b";
+}
+.avatar-11:before {
+  content: "\e90c";
+}

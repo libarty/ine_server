@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'player';
+  src:  url('fonts/player.eot?e69yjd');
+  src:  url('fonts/player.eot?e69yjd#iefix') format('embedded-opentype'),
+    url('fonts/player.ttf?e69yjd') format('truetype'),
+    url('fonts/player.woff?e69yjd') format('woff'),
+    url('fonts/player.svg?e69yjd#player') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="player-"], [class*=" player-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'player' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.player-audio-v1:before {
+  content: "\e900";
+}
+.player-audio-v2:before {
+  content: "\e901";
+}
+.player-backward:before {
+  content: "\e902";
+}
+.player-effects:before {
+  content: "\e903";
+}
+.player-enlarge:before {
+  content: "\e904";
+}
+.player-faster:before {
+  content: "\e905";
+}
+.player-first:before {
+  content: "\e906";
+}
+.player-forward:before {
+  content: "\e907";
+}
+.player-last:before {
+  content: "\e908";
+}
+.player-louder:before {
+  content: "\e909";
+}
+.player-next_ensuing:before {
+  content: "\e90a";
+}
+.player-no_sound:before {
+  content: "\e90b";
+}
+.player-pause:before {
+  content: "\e90c";
+}
+.player-play:before {
+  content: "\e90d";
+}
+.player-previous:before {
+  content: "\e90e";
+}
+.player-quieter:before {
+  content: "\e90f";
+}
+.player-shrink:before {
+  content: "\e910";
+}
+.player-slower:before {
+  content: "\e911";
+}
+.player-sound-1:before {
+  content: "\e912";
+}
+.player-sound-2:before {
+  content: "\e913";
+}
+.player-sound-3:before {
+  content: "\e914";
+}
+.player-sound-4:before {
+  content: "\e915";
+}
+.player-speed-1:before {
+  content: "\e916";
+}
+.player-speed-2:before {
+  content: "\e917";
+}
+.player-speed-3:before {
+  content: "\e918";
+}
+.player-speed-4:before {
+  content: "\e919";
+}
+.player-speed-5:before {
+  content: "\e91a";
+}
+.player-stop:before {
+  content: "\e91b";
+}
+.player-subtitles:before {
+  content: "\e91c";
+}
+.player-to-background:before {
+  content: "\e91d";
+}

@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'edit_text';
+  src:  url('fonts/edit_text.eot?7ocubg');
+  src:  url('fonts/edit_text.eot?7ocubg#iefix') format('embedded-opentype'),
+    url('fonts/edit_text.ttf?7ocubg') format('truetype'),
+    url('fonts/edit_text.woff?7ocubg') format('woff'),
+    url('fonts/edit_text.svg?7ocubg#edit_text') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="edit_text-"], [class*=" edit_text-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'edit_text' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.edit_text-bold:before {
+  content: "\e900";
+}
+.edit_text-color:before {
+  content: "\e901";
+}
+.edit_text-color_back:before {
+  content: "\e902";
+}
+.edit_text-color_text:before {
+  content: "\e903";
+}
+.edit_text-indent:before {
+  content: "\e904";
+}
+.edit_text-italic:before {
+  content: "\e905";
+}
+.edit_text-list:before {
+  content: "\e906";
+}
+.edit_text-list_bullet:before {
+  content: "\e907";
+}
+.edit_text-list_ordered:before {
+  content: "\e908";
+}
+.edit_text-paragraph:before {
+  content: "\e909";
+}
+.edit_text-paragraph_center:before {
+  content: "\e90a";
+}
+.edit_text-paragraph_left:before {
+  content: "\e90b";
+}
+.edit_text-paragraph_right:before {
+  content: "\e90c";
+}
+.edit_text-quote:before {
+  content: "\e90d";
+}
+.edit_text-size:before {
+  content: "\e90e";
+}
+.edit_text-spoiler_off:before {
+  content: "\e90f";
+}
+.edit_text-spoiler_on:before {
+  content: "\e910";
+}
+.edit_text-strike:before {
+  content: "\e911";
+}
+.edit_text-sub:before {
+  content: "\e912";
+}
+.edit_text-sup:before {
+  content: "\e913";
+}
+.edit_text-sup_sub:before {
+  content: "\e914";
+}
+.edit_text-terminal:before {
+  content: "\e915";
+}
+.edit_text-underline:before {
+  content: "\e916";
+}

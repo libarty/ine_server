@@ -1,0 +1,25 @@
+{% load i18n %}
+{% load static %}
+
+<p class="login_title">{% trans 'Congratulation' %}</p>
+<div>
+	<p>{% trans 'Your password changed' %}</p>
+</div>
+<div class="button_triangle">
+	<div class="button_back">
+		<p>{% trans 'Back Login' %}</p>
+		<div class="button_area">
+			<div class="fake_button_login" onClick="window.location.href='{% url 'profiles:login'%}'" ></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+

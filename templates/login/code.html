@@ -1,0 +1,27 @@
+{% load i18n %}
+<p class="login_title">Check code</p>
+<div>
+	<p>{% trans 'Code' %}-1</p>
+	<input type="text" required=''value=''  name="code1" placeholder="Code 1"><br>
+</div>
+<div>
+	<p>{% trans 'Code' %}-2</p>
+	<input type="text" required=''value=''  name="code2" placeholder="Code 2"><br>
+</div>
+{% if args.login_error %}
+	<p class="login_error">LoginError: {{ args.login_error }}</p>
+{% endif %}
+<div class="button_triangle">
+	<div class="button_back">
+		<p>{% trans 'Cancel' %}</p>
+		<div class="button_area">
+			<button type="submit" name="Cancel" value='True'></button>
+		</div>
+	</div>
+	<div class="button_next">
+		<p>{% trans 'Check' %}</p>
+		<div class="button_area">
+			<button type="submit" name="Check" value='True'></button>
+		</div>
+	</div>
+</div>

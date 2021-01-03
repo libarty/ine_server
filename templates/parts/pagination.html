@@ -1,0 +1,49 @@
+<div class="pagination">
+		{% if args.contacts.has_previous %}
+			<!--PREV-->
+			<a class="pagi_prev" href="?tab=thought&page={{ args.contacts.previous_page_number }}">&laquo;</a>
+		{% endif %}
+	<div class="pagination_content">
+		
+
+		{% if args.contacts.has_previous %}
+
+			<!--FIRST-->
+			<a href="?tab=thought&page=1">1</a>
+		 
+		{% endif %}
+		 
+			<!--NUM-->
+			<!--Points-->
+			{% if args.contacts.number|add:args.length.l_p > args.length.l_n and not args.contacts.number|add:args.length.l_f <= 1%}
+				<a class="page-link" href="?tab=thought&page={{ args.contacts.number|add:args.length.l_f }}">&hellip;</a>
+			{% endif %}
+			
+			<!--Numbers-->
+			{% for i in args.contacts.paginator.page_range %}
+				{% if args.contacts.number == i %}
+					<a class="pagi_current">{{ i }}</a>
+				{% elif i > args.contacts.number|add:args.length.l_f and i < args.contacts.number|add:args.length.l_l and not i ==   args.contacts.paginator.num_pages and not i == 1  %}
+					<a class="page-link" href="?tab=thought&page={{ i }}">{{ i }}</a>
+				{% endif %}
+			{% endfor %}
+			
+			<!--Points-->
+			{% if args.contacts.paginator.num_pages > args.contacts.number|add:args.length.l_n and not args.contacts.number|add:args.length.l_l >= args.contacts.paginator.num_pages %}
+				<a class="page-link" href="?tab=thought&page={{ args.contacts.number|add:args.length.l_l }}">&hellip;</a>
+			{% endif %}
+		 
+		
+		{% if args.contacts.has_next %}
+			 
+				<!--LAST-->
+				<a href="?tab=thought&page={{ args.contacts.paginator.num_pages }}">{{ args.contacts.paginator.num_pages }}</a>
+
+			 
+		{% endif %}
+	</div>
+	{% if args.contacts.has_next %}
+				<!--NEXT-->
+				<a class="pagi_next" href="?tab=thought&page={{ args.contacts.next_page_number }}">&raquo</a>
+	{% endif %}
+</div>

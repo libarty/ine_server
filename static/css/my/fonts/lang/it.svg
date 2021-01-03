@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 4000 3000"
+   version="1.1"
+   id="svg19736"
+   sodipodi:docname="it.svg"
+   width="4000"
+   height="3000"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata19742">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs19740" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="877"
+     id="namedview19738"
+     showgrid="true"
+     inkscape:zoom="0.11523438"
+     inkscape:cx="1155.8386"
+     inkscape:cy="414.26765"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg19736">
+    <inkscape:grid
+       type="xygrid"
+       id="grid19744" />
+  </sodipodi:namedview>
+  <rect
+     width="1333.3334"
+     height="3000"
+     id="rect19730"
+     x="0"
+     y="1.4210855e-14"
+     style="fill:#009246;stroke-width:1414.21374512" />
+  <rect
+     width="1333.3334"
+     height="3000"
+     x="1333.3334"
+     id="rect19732"
+     y="1.4210855e-14"
+     style="fill:#ffffff;stroke-width:1414.21374512" />
+  <rect
+     width="1333.3334"
+     height="3000"
+     x="2666.6667"
+     id="rect19734"
+     y="1.4210855e-14"
+     style="fill:#ce2b37;stroke-width:1414.21374512" />
+</svg>

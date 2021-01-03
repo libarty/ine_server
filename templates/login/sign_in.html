@@ -1,0 +1,31 @@
+{% load i18n %}
+<p class="login_title">{% trans 'Sign in' %}</p>
+<div>
+	<p>{% trans 'Login' %}</p>
+	<input type="text" required=''value='{{args.login}}'  name="Login" placeholder="Login"><br>
+</div>
+<div>
+	<p>{% trans 'Password' %}</p>
+	<input type="password" required=''value='{{args.password}}'  name="Password" placeholder="Password"><br>
+</div>
+{% if args.login_error %}
+	<p class="login_error">LoginError: {{ args.login_error }}</p>
+	<p class="forgot_but"><button type="submit" name="Restore" value='True'>{% trans 'Forgot password?' %}</button></p>
+{% endif %}
+<div class="button_block">
+	<div class="button_triangle">
+		<div class="button_back">
+			<p>{% trans 'Back Home' %}</p>
+			<div class="button_area">
+				<button type="submit" name="Redirect" value='True'></button>
+			</div>
+		</div>
+		<div class="button_next">
+			<p>{% trans 'Log in' %}</p>
+			<div class="button_area">
+				<button type="submit" name="Entry" value='True'></button>
+			</div>
+		</div>
+	</div>
+	<button class="registration_button" type="submit" name="Registration" value='True' >{% trans 'Registration' %}</button>
+</div>
